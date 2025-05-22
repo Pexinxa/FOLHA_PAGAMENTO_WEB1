@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Simulador de Folha de Pagamento</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container" role="main">
+    <h1>Simulador de Folha de Pagamento</h1>
+    <form id="payrollForm" novalidate>
+
+      <div>
+        <label for="nomeFuncionario">Nome do Funcionário:</label>
+        <input type="text" id="nomeFuncionario" name="nomeFuncionario" placeholder="Digite o nome completo" required />
+      </div>
+
+      <div>
+        <label for="cargoFuncionario">Cargo do Funcionário:</label>
+        <select id="cargoFuncionario" name="cargoFuncionario" required>
+          <option value="" disabled selected>Selecione o cargo</option>
+          <option value="gerente">Gerente — R$ 8.000</option>
+          <option value="analista">Analista — R$ 5.000</option>
+          <option value="assistente">Assistente — R$ 3.000</option>
+        </select>
+      </div>
+
+      <fieldset>
+        <legend>Benefícios:</legend>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="beneficios" value="300" class="Beneficios"/> Vale-Transporte (R$ 300)</label>
+          <label><input type="checkbox" name="beneficios" value="400" class="Beneficios"/> Plano de Saúde (R$ 400)</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Tipo de Contrato:</legend>
+        <div class="radio-group">
+          <label><input type="radio" name="tipoContrato" value="20" class="tipo_contrato" required /> CLT (desconto 20%)</label>
+          <label><input type="radio" name="tipoContrato" value="5" class="tipo_contrato"/> PJ (desconto 5%)</label>
+        </div>
+      </fieldset>
+
+      <button type="submit" onclick="calcular()">Calcular Folha</button>
+
+      <div id="error" class="error-message" aria-live="polite"></div>
+    </form>
+
+        <div class="result" id="result" aria-live="polite" style="display:none;" tabindex="0"></div>
+
+       <section>
+        <p></p>
+       </section>
+  </main>
+    
+  <script src="script.js"></script>
+</body>
+</html>
+
